@@ -14,22 +14,6 @@
 //     }
 //   }//
 // }
-/*LINKED LISTS and 
-12--> 5 --> 8 --> null
-*/
-// let linkedList = {
-//   head : {
-//     value: 12,
-//     next: {
-//       //pointer to next
-//       value: 5, 
-//       next: {
-//         value: 8,
-//         next : null
-//       }
-//     }
-//   }//
-// }
 class Node{
   constructor(value){
     this.value = value;
@@ -48,10 +32,7 @@ class LinkedList{
   }
 
   append(value){
-   const newNode = {
-     value : value,
-     next: null
-   }
+   const newNode = new Node(value);
    this.tail.next = newNode;
    this.tail = newNode;
    this.length++
@@ -59,33 +40,79 @@ class LinkedList{
   }
 
  prepend(value){
-   const newNode = {
-     value : value,
-     next: null
-   }
+   const newNode = new Node(value);
    newNode.next = this.head;
    this.head = newNode;
    this.length++
    return this;
+  }
+  
+  insert(index, value){
+    if(index === 0){
+      return this.prepend(value);
+    }
+    if(index >= this.length) {
+      return this.append(value);
+    }
+
+      const newNode = new Node(value);
+      let leader = this.traverseToIndex(index-1);
+      const holdingPointer = leader.next;
+      leader.next = newNode;
+      newNode.next = holdingPointer;
+      this.length++;
+      return this.printList();
+  }
+
+  remove(index){
+    // if(index === 0){
+
+    //   this.head = this.head.next;
+    //   delete this.head;
+    // }
+    // if(index >= this.length){
+
+    // }
+    const leader = this.traverseToIndex(index-1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+    return this.printList();
+  }
+
+  traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter !== index) {
+      currentNode = currentNode.next;
+      counter++
+    }
+    return currentNode;
   }
 
   printList(){
     const llarray = [];
     let currentNode = this.head;
     while(currentNode !== null){
-llarray.push(currentNode.value);
-currentNode = currentNode.next;
+    llarray.push(currentNode.value);
+    currentNode = currentNode.next;
     }
     return llarray;
   }
 
 }
+
 const LL = new LinkedList(12);
 LL.append(5);
 LL.append(16);
 LL.append(17);
-LL.prepend(4)
+LL.prepend(4);
+LL.insert(4,799);
+
 LL.printList();
+
+LL.remove(2);
+LL.remove(2);
 
 /*
 Google question forst recurring character
