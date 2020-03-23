@@ -1,12 +1,12 @@
 /*DOUBLY LINKED LISTS
 */
-// add a method remove() to the linked list that deletes a node to the specified index
+// add a method remove() to the linked list that deletes a node to the specified indexaa
 
 class DoublyLinkedList {
   constructor(value) {
     this.head = {
       value: value,
-      next: null, 
+      next: null,
       prev: null
     };
     this.tail = this.head;
