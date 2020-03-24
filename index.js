@@ -1,6 +1,6 @@
 /*DOUBLY LINKED LISTS
 */
-// add a method remove() to the linked list that deletes a node to the specified indexaa
+// add a method remove() to the linked list that deletes a node to the specified index
 
 class DoublyLinkedList {
   constructor(value) {
