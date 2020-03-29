@@ -1,13 +1,13 @@
 /*DOUBLY LINKED LISTS
 */
-// add a method remove() to the linked list that deletes a node to the specified in
+// add a method remove() to the linked list that deletes a node to the specified in 
 
 class DoublyLinkedList {
   constructor(value) {
     this.head = {
       value: value,
       next: null,
-      prev: null
+      prev: null,
     };
     this.tail = this.head;
     this.length = 1;
