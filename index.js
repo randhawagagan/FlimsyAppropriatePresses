@@ -1,6 +1,6 @@
 /*DOUBLY LINKED LISTS
 */
-// add a method remove() to the linked list that deletes a node to the specified. edfe
+// add a method remove() to the linked list that deletes a node to the specified. edfe\\\
 class DoublyLinkedList {
   constructor(value) {
     this.head = {
