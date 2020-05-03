@@ -1,6 +1,6 @@
 /*DOUBLY LINKED LISTS
 */
-// add a method remove() to the linked list that deletes a node to the speg
+// add a method remove() to the linked list that deletes a node to the speggggg
 class DoublyLinkedList {
   constructor(value) {
     this.head = {
